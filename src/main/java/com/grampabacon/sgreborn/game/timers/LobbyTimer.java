@@ -4,6 +4,7 @@ import com.grampabacon.sgreborn.Main;
 import com.grampabacon.sgreborn.utils.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -14,9 +15,12 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class LobbyTimer extends BukkitRunnable {
     int time = 60;
 
+    Location spawn;
+
     Main plugin;
     public LobbyTimer() {
         this.plugin = Main.getInstance();
+        spawn = Main.getInstance().getServer().getWorld("world").getSpawnLocation();
     }
 
     @Override
@@ -72,10 +76,10 @@ public class LobbyTimer extends BukkitRunnable {
                 return;
             }
             for (Player player : Bukkit.getOnlinePlayers()) {
-                player.getInventory().clear();
+
                 // TODO: ADD TELEPORT + give items
-                player.setFlying(false);
-                player.setAllowFlight(false);
+                plugin.playerManager.preparePlayer(player);
+                player.teleport(spawn;
                 cancel();
             }
         }

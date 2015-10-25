@@ -2,6 +2,8 @@ package com.grampabacon.sgreborn.game.players.managers;
 
 import com.grampabacon.sgreborn.Main;
 import com.grampabacon.sgreborn.game.players.GamePlayer;
+import org.bukkit.GameMode;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -62,5 +64,16 @@ public class PlayerManager {
 
     public int getMinPlayers() {
         return minPlayers;
+    }
+
+    public void preparePlayer(Player player ) {
+        player.setHealth(20);
+        player.setFoodLevel(20);
+        player.getInventory().clear();
+        player.setFlying(false);
+        player.setLevel(0);
+        player.setSaturation(20f);
+        player.setFireTicks(0);
+        player.setGameMode(GameMode.SURVIVAL);
     }
 }
