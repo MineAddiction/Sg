@@ -1,6 +1,6 @@
 package com.grampabacon.sgreborn.utils.commands;
 
-import com.grampabacon.sgreborn.utils.MessageBuilder;
+import com.grampabacon.sgreborn.utils.messages.MessageBuilder;
 import net.md_5.bungee.api.ChatColor;
 
 /**

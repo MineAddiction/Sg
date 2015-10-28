@@ -1,4 +1,4 @@
-package com.grampabacon.sgreborn.utils;
+package com.grampabacon.sgreborn.utils.messages;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.BaseComponent;
